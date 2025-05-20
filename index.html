@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Flashcard System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="stylesheet.css" />
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4 text-primary fw-bold">Smart Flashcard System</h1>
+
+    <!-- Add Flashcard -->
+    <div class="card shadow-sm mb-5">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Add Flashcard</h5>
+      </div>
+      <div class="card-body">
+        <form id="flashcardForm">
+          <div class="mb-3">
+            <label for="student_id" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="student_id" required />
+          </div>
+          <div class="mb-3">
+            <label for="question" class="form-label">Question</label>
+            <textarea class="form-control" id="question" rows="2" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="answer" class="form-label">Answer</label>
+            <textarea class="form-control" id="answer" rows="2" required></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="addFlashcard()">Add Flashcard</button>
+          <div id="add_result" class="mt-2 text-danger fw-semibold"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Get Flashcards -->
+    <div class="card shadow-sm mb-5">
+      <div class="card-header bg-success text-white">
+        <h5 class="mb-0">Get Flashcards by Mixed Subjects</h5>
+      </div>
+      <div class="card-body">
+        <form id="getForm">
+          <div class="mb-3">
+            <label for="get_student_id" class="form-label">Student ID</label>
+            <input type="text" class="form-control" id="get_student_id" required />
+          </div>
+          <div class="mb-3">
+            <label for="limit" class="form-label">Limit</label>
+            <input type="number" class="form-control" id="limit" min="1" required />
+          </div>
+          <button type="button" class="btn btn-success" onclick="getFlashcards()">Get Flashcards</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Display Flashcards -->
+    <div id="flashcard_output" class="row g-3"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
